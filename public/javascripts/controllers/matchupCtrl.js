@@ -1,7 +1,10 @@
 function MatchupCtrl($scope, $http) {
 	$scope.allHeroes = [];
-	$scope.chosenHeroes = [];
-	$scope.matchupResult = [];
+	$scope.chosenHeroesEnemy = [];
+	$scope.chosenHeroesFriendly = [];
+	$scope.enemyMatchupResult = [];
+	$scope.friendlyMatchupResult = [];
+	$scope.maximumAmountOfHeroes = 5;
 	
 	$http({method: 'GET', url: '/api/getheroes'})
 		.success(function(data, status, headers, config) {
@@ -14,21 +17,29 @@ function MatchupCtrl($scope, $http) {
 		//disabling chosen options
 		for(var i = 0; i < $scope.allHeroes.length; i++) {
 			var currentHero = $scope.allHeroes[i];
-			if(currentHero.id === $scope.chosenHeroes[0].id ||
-			($scope.chosenHeroes[1] && currentHero.id === $scope.chosenHeroes[1].id) ||
-			($scope.chosenHeroes[2] && currentHero.id === $scope.chosenHeroes[2].id) ||
-			($scope.chosenHeroes[3] && currentHero.id === $scope.chosenHeroes[3].id) ||
-			($scope.chosenHeroes[4] && currentHero.id === $scope.chosenHeroes[4].id)) {
-				$scope.allHeroes[i].isInUse = true;
-			}
-			else {
-				$scope.allHeroes[i].isInUse = false;
+			
+			$scope.allHeroes[i].isInUse = false;
+			
+			for(var j = 0; j < $scope.maximumAmountOfHeroes; j++)
+			{
+				if( ($scope.chosenHeroesEnemy[j] && currentHero.id === $scope.chosenHeroesEnemy[j].id) ||
+					($scope.chosenHeroesFriendly[j] && currentHero.id === $scope.chosenHeroesFriendly[j].id)) {
+					$scope.allHeroes[i].isInUse = true;
+				}
 			}
 		}
 		
-		$http({method: "POST", url: 'api/matchup', data: $scope.chosenHeroes })
+		$http({method: "POST", url: 'api/matchup', data: $scope.chosenHeroesEnemy })
 			.success(function(data, status, headers, config) {
-				$scope.matchupHeroes = data;
+				$scope.enemyMatchupResult = data;
+			})
+			.error(function(data, status, headers, config) {
+				//TODO: errorhandling
+			});
+			
+		$http({method: "POST", url: 'api/matchup', data: $scope.chosenHeroesFriendly })
+			.success(function(data, status, headers, config) {
+				$scope.friendlyMatchupResult = data;
 			})
 			.error(function(data, status, headers, config) {
 				//TODO: errorhandling

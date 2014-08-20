@@ -9,15 +9,26 @@ a {
 
 .container { padding-top: 21px; }
 
-#MatchupResults {
-	background: #c9c9c9;
-	font-size: 1.8em;
-	margin-top: 42px;
+.ResultsContainer { 
+	margin-top: 42px; 
+	background: #c0e9f1;
+	padding: 1px 9px;
+}
+.MatchupResults {
+	font-size: 1.5em;
 	width: 100%;
 }
-	#MatchupResults td, #MatchupResults th {
-		padding: 9px;
+	.MatchupResults td, .MatchupResults th {
+		padding: 6px;
 	}
-		#MatchupResults tr:nth-child(odd) {
+		.MatchupResults tr:nth-child(odd) {
 			background: white;
 		}
+		
+		
+.HeroPicker {
+	margin-bottom: 6px;
+}
+	.HeroPicker img.HeroPickerImage {
+		max-height: 51px;
+	}

@@ -22,9 +22,9 @@ exports.matchup = function(req, res, next) {
 //retrieving array of enemy heroes and array of team heroes.
 	var enemyHeroes = req.body;
 	
-	if(enemyHeroes == null) {
-		var err = new Error('The query parameters "enemyHeroes"  was missing.');
-		next(err);
+	if(enemyHeroes == null || enemyHeroes.length === 0) {
+		res.send([]);
+		return;
 	}
 	
 	console.log(req.body);
