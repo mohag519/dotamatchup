@@ -1,0 +1,23 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.container { padding-top: 21px; }
+
+#MatchupResults {
+	background: #c9c9c9;
+	font-size: 1.8em;
+	margin-top: 42px;
+	width: 100%;
+}
+	#MatchupResults td, #MatchupResults th {
+		padding: 9px;
+	}
+		#MatchupResults tr:nth-child(odd) {
+			background: white;
+		}

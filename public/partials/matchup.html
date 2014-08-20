@@ -1,0 +1,16 @@
+<div class="MatchupContainer">
+	<form novalidate id="SelectHeroesForm">
+		<select 								ng-options="hero as hero.localized_name for hero in allHeroes" 		  ng-model="chosenHeroes[0]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+		<select ng-show="chosenHeroes[0] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroes[1]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+		<select ng-show="chosenHeroes[1] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroes[2]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+		<select ng-show="chosenHeroes[2] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroes[3]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+		<select ng-show="chosenHeroes[3] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroes[4]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+	</form>
+	
+	<table id="MatchupResults" ng-show="matchupHeroes">
+			<tr> <th>Name</th> <th>Advantage</th>  </tr>
+		<tr class="MatchupResultRow" ng-repeat="hero in matchupHeroes">
+			<td>{{ hero.name }} </td> <td>{{ hero.advantage }}</td>
+		</tr>
+	</div>
+</div>
