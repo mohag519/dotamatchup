@@ -1,5 +1,10 @@
 <div class="MatchupContainer row">
 	<form novalidate id="SelectHeroesForm">
+		<div id="TeammatesChooserContainer">
+			<input type="checkbox" ng-model="activateTeammates" id="activateTeammates" ng-change="change()" /> 
+			<label for="activateTeammates">Inklude Teammate combination statistiks. (Slower performance)</label> 
+		</div>
+		
 		<div id="EnemyHeroesContainer" class="col-sm-6">
 			<h3>Enemy heroes</h3>
 			<div class="HeroPicker">
@@ -27,8 +32,8 @@
 				<h3>Pick these heroes</h3>
 				<table class="MatchupResults">
 					<tr> <th>Name</th> <th>Advantage</th>  </tr>
-					<tr class="MatchupResultRow" ng-repeat="hero in enemyMatchupResult">
-						<td>{{ hero.name }} </td> <td>{{ 0 - hero.advantage }}</td>
+					<tr class="MatchupResultRow" ng-repeat="hero in enemyMatchupResult | orderBy : 'advantage'">
+						<td>{{ hero.name }} </td> <td>{{ 0 - hero.advantage | number : 2 }}</td>
 					</tr>
 				</table>
 			</div>
@@ -61,8 +66,8 @@
 				<h3>Ban these heroes</h3>
 				<table class="MatchupResults" >
 					<tr> <th>Name</th> <th>Advantage</th>  </tr>
-					<tr class="MatchupResultRow" ng-repeat="hero in friendlyMatchupResult">
-						<td>{{ hero.name }} </td> <td>{{ hero.advantage }}</td>
+					<tr class="MatchupResultRow" ng-repeat="hero in friendlyMatchupResult | orderBy : 'advantage'">
+						<td>{{ hero.name }} </td> <td>{{ hero.advantage | number : 2 }}</td>
 					</tr>
 				</table>
 			</div>

@@ -127,7 +127,7 @@
 			"dotabuff_name": "windranger"
         },
         {
-            "name": "zeus",
+            "name": "zuus",
             "id": 22,
             "localized_name": "Zeus",
 			"dotabuff_name": "zeus"
