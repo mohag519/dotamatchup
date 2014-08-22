@@ -8,7 +8,7 @@ function MatchupCtrl($scope, $http) {
 	
 	$http({method: 'GET', url: '/api/getheroes'})
 		.success(function(data, status, headers, config) {
-			$scope.allHeroes = Enumerable.from(data.heroes).orderBy(function(x) { return x.name_localized }).toArray();
+			$scope.allHeroes = data.heroes;
 		})
 		.error(function(data, status, headers, config) {
 		});

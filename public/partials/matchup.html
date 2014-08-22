@@ -8,23 +8,23 @@
 		<div id="EnemyHeroesContainer" class="col-sm-6">
 			<h3>Enemy heroes</h3>
 			<div class="HeroPicker">
-				<select 								ng-options="hero as hero.localized_name for hero in allHeroes" 		  ng-model="chosenHeroesEnemy[0]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select 								ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" 		  ng-model="chosenHeroesEnemy[0]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesEnemy[0].name + '_full.png' }}" ng-show="chosenHeroesEnemy[0]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesEnemy[0] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesEnemy[1]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesEnemy[0] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesEnemy[1]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesEnemy[1].name + '_full.png' }}" ng-show="chosenHeroesEnemy[1]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesEnemy[1] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesEnemy[2]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesEnemy[1] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesEnemy[2]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesEnemy[2].name + '_full.png' }}" ng-show="chosenHeroesEnemy[2]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesEnemy[2] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesEnemy[3]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesEnemy[2] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesEnemy[3]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesEnemy[3].name + '_full.png' }}" ng-show="chosenHeroesEnemy[3]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesEnemy[3] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesEnemy[4]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesEnemy[3] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesEnemy[4]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesEnemy[4].name + '_full.png' }}" ng-show="chosenHeroesEnemy[4]" class="HeroPickerImage" />
 			</div>
 			
@@ -42,23 +42,23 @@
 		<div id="FriendlyHeroesContainer" class="col-sm-6">
 			<h3>Friendly heroes</h3>
 			<div class="HeroPicker">
-				<select 								ng-options="hero as hero.localized_name for hero in allHeroes" 		  ng-model="chosenHeroesFriendly[0]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select 								ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" 		  ng-model="chosenHeroesFriendly[0]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesFriendly[0].name + '_full.png' }}" ng-show="chosenHeroesFriendly[0]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesFriendly[0] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesFriendly[1]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesFriendly[0] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesFriendly[1]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesFriendly[1].name + '_full.png' }}" ng-show="chosenHeroesFriendly[1]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesFriendly[1] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesFriendly[2]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesFriendly[1] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesFriendly[2]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesFriendly[2].name + '_full.png' }}" ng-show="chosenHeroesFriendly[2]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesFriendly[2] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesFriendly[3]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesFriendly[2] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesFriendly[3]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesFriendly[3].name + '_full.png' }}" ng-show="chosenHeroesFriendly[3]" class="HeroPickerImage" />
 			</div>
 			<div class="HeroPicker">
-				<select ng-show="chosenHeroesFriendly[3] != null" ng-options="hero as hero.localized_name for hero in allHeroes" ng-model="chosenHeroesFriendly[4]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
+				<select ng-show="chosenHeroesFriendly[3] != null" ng-options="hero as hero.localized_name for hero in allHeroes | orderBy : 'localized_name'" ng-model="chosenHeroesFriendly[4]" ng-change="change()" options-disabled="hero.isInUse for hero in allHeroes"></select>
 				<img ng-src="{{ '/images/heroes/' + chosenHeroesFriendly[4].name + '_full.png' }}" ng-show="chosenHeroesFriendly[4]" class="HeroPickerImage" />
 			</div>
 			
